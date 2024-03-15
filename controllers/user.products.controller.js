@@ -58,7 +58,7 @@ exports.update = async (req, res) => {
 
     try {
         const result = await User.updateOne(
-            {username: username},
+            {username: username, "products._id": _id},
             {
                 $set: {
                     "products.$.quantity": quantity
